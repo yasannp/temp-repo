@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <svg width="100%" height="200">
+
+            <defs>
+                <filter id="geeks">
+            
+                    <feConvolveMatrix order="8,8" divisor="5" 
+                        kernelMatrix = "1 0 0 0 0 
+                                        0 0 0 0 1
+                                        0 0 0 0 0
+                                        0 0 0 1 0
+                                        0 0 0 0 0
+                                        0 0 1 0 0
+                                        0 0 0 0 0
+                                        0 1 0 0 0
+                                        0 0 0 0 0 
+                                        1 0 0 0 0
+                                        0 0 0 0 1 
+                                        0 0 0 0 0
+                                        0 0 0 1 "
+                        in="SourceAlpha" result="bevel">
+                    </feConvolveMatrix>
+
+                    <feMerge>
+                        <feMergeNode in="bevel"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+            
+                </filter>
+            </defs>
+        
+            <g font-size="3em">
+                <text x="225" y="75">
+                    GeeksforGeeks
+                </text>
+                
+                <text x="225" y="150" fill="green" 
+                    filter="url(#geeks)">
+                    GeeksforGeeks
+                </text>
+            </g>
+        
+        </svg>
+    </body>
+
+</html>
